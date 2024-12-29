@@ -10,6 +10,7 @@ object LogicThinkering : ModInitializer {
 
     override fun onInitialize() {
         logger.info("Initializing Logic Thinkering mod!")
+        registerBlocks()
         ModItems.registerItems()
         ModComponents.initialize()
     }
