@@ -15,6 +15,11 @@ private val logicSettings = Settings.copy(Blocks.REPEATER)
 private val blocksToRegister = listOf(
     OrGate(logicSettings) to "or_gate_block",
     AndGate(logicSettings) to "and_gate_block",
+    XorGate(logicSettings) to "xor_gate_block",
+    NotGate(logicSettings) to "not_gate_block",
+    NorGate(logicSettings) to "nor_gate_block",
+    NandGate(logicSettings) to "nand_gate_block",
+    XnorGate(logicSettings) to "xnor_gate_block",
 )
 
 fun registerBlocks() {
