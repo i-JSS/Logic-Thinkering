@@ -43,7 +43,7 @@ class BlockRegistryBuilder {
 
     fun register() {
         if (settings == null)
-            throw IllegalStateException("Settings must be set before registration")
+            throw IllegalStateException("Settings must be set before block registration")
 
         val constructedBlocks = blocks.map { it.first(settings!!) to it.second}
         val registeredBlocks = constructedBlocks.map { (block, name) ->
