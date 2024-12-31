@@ -2,6 +2,7 @@ package com.logicthinkering
 
 import com.logicthinkering.LogicThinkering.MOD_ID
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
+import net.minecraft.block.AbstractBlock
 import net.minecraft.block.AbstractBlock.Settings
 import net.minecraft.block.Block
 import net.minecraft.block.Blocks
