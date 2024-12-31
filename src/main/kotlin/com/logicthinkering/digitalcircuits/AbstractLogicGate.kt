@@ -1,4 +1,4 @@
-package com.logicthinkering
+package com.logicthinkering.digitalcircuits
 
 import net.minecraft.block.AbstractRedstoneGateBlock
 import net.minecraft.block.Block
