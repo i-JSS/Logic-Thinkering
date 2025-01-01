@@ -43,13 +43,6 @@ private fun registerBlocks() {
         ::XNORGate with "xnor_gate_block"
     }
 }
-
-private val CHARGE_COMPONENT: ComponentType<Int> = Registry.register(
-    Registries.DATA_COMPONENT_TYPE,
-    Identifier.of(MOD_ID, "charge_level"),
-    ComponentType.builder<Int>().codec(Codec.INT).build()
-)
-
 /**
  * Object responsible for initializing the mod.
  * Registering blocks, items and componentes and setting the mod's identifier.
