@@ -1,6 +1,6 @@
 package com.logicthinkering.reinforceditems
 
-import com.logicthinkering.ModComponents
+import com.logicthinkering.CHARGE_COMPONENT
 import net.minecraft.entity.LivingEntity
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.item.ItemStack
@@ -44,7 +44,7 @@ class ReinforcedCopperSword(
     }
 
     private fun getCurrentCharge(stack: ItemStack): Int =
-        stack.get(ModComponents.CHARGE_COMPONENT) ?: DEFAULT_CHARGE
+        stack.get(CHARGE_COMPONENT) ?: DEFAULT_CHARGE
 
     private fun dealChargedDamage(target: LivingEntity, attacker: PlayerEntity, chargeLevel: Int) {
         val damageDealt = material.attackDamage * (max(chargeLevel, MAX_CHARGE) + 1)
@@ -52,7 +52,7 @@ class ReinforcedCopperSword(
     }
 
     private fun resetCharge(stack: ItemStack) {
-        stack.set(ModComponents.CHARGE_COMPONENT, DEFAULT_CHARGE)
+        stack.set(CHARGE_COMPONENT, DEFAULT_CHARGE)
     }
 
     private fun playAttackSound(target: LivingEntity, attacker: PlayerEntity) {
