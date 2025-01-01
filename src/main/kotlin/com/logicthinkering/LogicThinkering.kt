@@ -55,6 +55,6 @@ object LogicThinkering : ModInitializer {
         logger.info("Initializing Logic Thinkering mod!")
         registerBlocks()
         registerItems()
-        logger.info("Registering {} components", MOD_ID)
+        ModComponents.initialize()
     }
 }
