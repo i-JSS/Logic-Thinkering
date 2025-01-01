@@ -1,7 +1,6 @@
 package com.logicthinkering.reinforceditems
 
 import com.logicthinkering.ModComponents
-import com.logicthinkering.reinforceditems.ReinforcedCopperSword
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.item.ItemStack
 import net.minecraft.item.ShieldItem
