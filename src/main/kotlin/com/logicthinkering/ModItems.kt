@@ -1,29 +1,13 @@
 package com.logicthinkering
 
-import com.logicthinkering.LogicThinkering.MOD_ID
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
-import net.minecraft.item.Item
 import net.minecraft.item.ItemGroups
-import net.minecraft.registry.Registries
-import net.minecraft.registry.Registry
-import net.minecraft.util.Identifier
 
 object ModItems {
-
-    private val reinforcedCopperShield = ReinforcedCopperShield()
-    private val reinforcedCopperSword = ReinforcedCopperSword()
-
     fun registerItems() {
-        registerItem(reinforcedCopperShield, "reinforced_copper_shield")
-        registerItem(reinforcedCopperSword, "reinforced_copper_sword")
-
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register { entries ->
-            entries.add(reinforcedCopperSword)
-            entries.add(reinforcedCopperShield)
+        registerItems {
+            group(ItemGroups.COMBAT)
+            ReinforcedCopperShield() with "reinforced_copper_shield"
+            ReinforcedCopperSword() with "reinforced_sword"
         }
-    }
-
-    private fun registerItem(item: Item, id: String): Item {
-        return Registry.register(Registries.ITEM, Identifier.of(MOD_ID, id), item)
     }
 }

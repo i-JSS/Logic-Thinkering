@@ -35,7 +35,7 @@ typealias BlockInit = (Settings) -> Block
 annotation class BlockRegistryDsl
 
 /**
- * A builder class for registering blocks with specific settings and item groups.
+ * A builder class for registering blocks with specific settings.
  * It supports configuring settings, item group, and whether items should be registered for blocks.
  */
 @BlockRegistryDsl
