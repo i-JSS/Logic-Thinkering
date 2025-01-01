@@ -7,7 +7,6 @@ import net.minecraft.block.Block
 import net.minecraft.item.BlockItem
 import net.minecraft.item.Item
 import net.minecraft.item.ItemGroup
-import net.minecraft.item.ItemGroups
 import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry
 import net.minecraft.registry.RegistryKey
@@ -42,8 +41,7 @@ annotation class BlockRegistryDsl
 @BlockRegistryDsl
 class BlockRegistryBuilder {
     private val blocks = mutableListOf<Pair<BlockInit, String>>()
-    // TODO: remove default item group
-    private var itemGroup : RegistryKey<ItemGroup> = ItemGroups.REDSTONE
+    private var itemGroup : RegistryKey<ItemGroup>? = null
     private var settings : Settings? = null
     private var registerItems : Boolean = true
 
@@ -100,6 +98,8 @@ class BlockRegistryBuilder {
      * @throws IllegalStateException If settings are not defined before block registration.
      */
     fun register() {
+        if (registerItems && itemGroup == null)
+            throw IllegalStateException("Item group must be set before block item registration")
         if (settings == null)
             throw IllegalStateException("Settings must be set before block registration")
 
