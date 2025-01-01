@@ -48,12 +48,24 @@ class ItemRegistryBuilder {
 
     /**
      * Adds an item with a specific identifier to be registered.
-     * The item name will be used in the registry.
      *
      * @param name The name for the item being registered.
      */
     infix fun Item.with(name: String) {
         items += this to name
+    }
+
+    /**
+     * Registers an item with a name. This function is used to build and register an item.
+     *
+     * Created for compatability with java
+     *
+     * @param name The name for the block being registered.
+     * @return this instance of BlockRegistryBuilder
+     */
+    fun with(item: Item, name: String) : ItemRegistryBuilder {
+        items += item to name
+        return this
     }
 
     fun register() {

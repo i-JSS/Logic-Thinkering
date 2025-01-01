@@ -91,6 +91,20 @@ class BlockRegistryBuilder {
     }
 
     /**
+     * Registers a block initialization function with a name. This function is used to build and register a block.
+     * The block name will be used in the registry.
+     *
+     * Created for compatability with java
+     *
+     * @param name The name for the block being registered.
+     * @return this instance of BlockRegistryBuilder
+     */
+    fun with(init: BlockInit, name: String) : BlockRegistryBuilder {
+        blocks += init to name
+        return this
+    }
+
+    /**
      * Registers all blocks in the registry, using the provided settings and item group.
      * This method also ensures that the all the items will be registered for each block
      * if registerItems is set
