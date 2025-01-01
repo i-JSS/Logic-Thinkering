@@ -1,4 +1,4 @@
-package com.logicthinkering
+package com.logicthinkering.reinforceditems
 
 import net.minecraft.block.Block
 import net.minecraft.item.Items
@@ -6,7 +6,6 @@ import net.minecraft.item.ToolMaterial
 import net.minecraft.recipe.Ingredient
 import net.minecraft.registry.tag.BlockTags
 import net.minecraft.registry.tag.TagKey
-
 
 object ReinforcedCopperMaterial : ToolMaterial {
     override fun getDurability(): Int = 455

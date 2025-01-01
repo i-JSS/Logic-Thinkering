@@ -1,5 +1,7 @@
 package com.logicthinkering
 
+import com.logicthinkering.reinforceditems.ReinforcedCopperShield
+import com.logicthinkering.reinforceditems.ReinforcedCopperSword
 import net.minecraft.item.ItemGroups
 
 object ModItems {

@@ -1,6 +1,6 @@
 package com.logicthinkering.mixin;
 
-import com.logicthinkering.ReinforcedCopperShield;
+import com.logicthinkering.reinforceditems.ReinforcedCopperShield;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
