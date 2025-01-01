@@ -51,11 +51,7 @@ class BlockRegistryBuilder {
      * @param settings The settings to be applied to the blocks.
      * @return The current instance of `BlockRegistryBuilder`.
      */
-    fun settings(settings: Settings): BlockRegistryBuilder {
-        this.settings = settings
-        return this
-    }
-
+    fun settings(settings: Settings) = apply { this.settings = settings }
 
     /**
      * Sets the item group that the block items will be added to.
@@ -63,10 +59,7 @@ class BlockRegistryBuilder {
      * @param group The item group to add the block items to.
      * @return The current instance of `BlockRegistryBuilder`.
      */
-    fun group(group: RegistryKey<ItemGroup>): BlockRegistryBuilder {
-        itemGroup = group
-        return this
-    }
+    fun group(group: RegistryKey<ItemGroup>) = apply { itemGroup = group }
 
     /**
      * Sets whether to register the items for each block.
@@ -75,14 +68,10 @@ class BlockRegistryBuilder {
      * @param group The item group to add the block items to.
      * @return The current instance of `BlockRegistryBuilder`.
      */
-    fun registerItems(registerItems: Boolean) : BlockRegistryBuilder {
-        this.registerItems = registerItems
-        return this
-    }
+    fun registerItems(registerItems: Boolean) = apply {this.registerItems = registerItems}
 
     /**
-     * Registers a block initialization function with a name. This function is used to build and register a block.
-     * The block name will be used in the registry.
+     * Registers a block initialization function with a name.
      *
      * @param name The name for the block being registered.
      */
@@ -91,18 +80,14 @@ class BlockRegistryBuilder {
     }
 
     /**
-     * Registers a block initialization function with a name. This function is used to build and register a block.
-     * The block name will be used in the registry.
+     * Registers a block initialization function with a name.
      *
      * Created for compatability with java
      *
      * @param name The name for the block being registered.
      * @return this instance of BlockRegistryBuilder
      */
-    fun with(init: BlockInit, name: String) : BlockRegistryBuilder {
-        blocks += init to name
-        return this
-    }
+    fun with(init: BlockInit, name: String) = apply { blocks += init to name }
 
     /**
      * Registers all blocks in the registry, using the provided settings and item group.

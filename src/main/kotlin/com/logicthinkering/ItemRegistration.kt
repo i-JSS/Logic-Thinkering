@@ -40,11 +40,7 @@ class ItemRegistryBuilder {
      * @param group The group to add the items to.
      * @return The current instance of `ItemRegistryBuilder`.
      */
-    fun group(group: RegistryKey<ItemGroup>): ItemRegistryBuilder {
-        itemGroup = group
-        return this
-    }
-
+    fun group(group: RegistryKey<ItemGroup>) = apply { itemGroup = group }
 
     /**
      * Adds an item with a specific identifier to be registered.
@@ -63,18 +59,16 @@ class ItemRegistryBuilder {
      * @param name The name for the block being registered.
      * @return this instance of BlockRegistryBuilder
      */
-    fun with(item: Item, name: String) : ItemRegistryBuilder {
-        items += item to name
-        return this
-    }
+    fun with(item: Item, name: String) = apply { items += item to name }
 
     fun register() {
+        val group = checkNotNull(itemGroup) { "Item group must be set before registration" }
         if (itemGroup == null)
             throw IllegalStateException("Item group must be set before block item registration")
         items.forEach { (item, name) ->
             Registry.register(Registries.ITEM, Identifier.of(MOD_ID, name), item)
         }
-        ItemGroupEvents.modifyEntriesEvent(itemGroup).register {
+        ItemGroupEvents.modifyEntriesEvent(group).register {
             items.forEach { (item, _) ->  it.add(item) }
         }
     }
