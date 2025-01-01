@@ -5,6 +5,9 @@ import net.minecraft.block.AbstractBlock.Settings
 import net.minecraft.block.Blocks
 import net.minecraft.item.ItemGroups
 
+/**
+ * Function responsible for block registration to minecraft
+ */
 fun registerBlocks() {
     registerBlocks {
         group(ItemGroups.REDSTONE)
