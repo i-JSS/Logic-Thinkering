@@ -32,11 +32,14 @@ fun registerBlocks(init: BlockRegistryBuilder.() -> Unit) {
  */
 typealias BlockInit = (Settings) -> Block
 
+@DslMarker
+annotation class BlockRegistryDsl
 
 /**
  * A builder class for registering blocks with specific settings and item groups.
  * It supports configuring settings, item group, and whether items should be registered for blocks.
  */
+@BlockRegistryDsl
 class BlockRegistryBuilder {
     private val blocks = mutableListOf<Pair<BlockInit, String>>()
     // TODO: remove default item group
