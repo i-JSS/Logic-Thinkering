@@ -7,6 +7,7 @@ import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry
 import net.minecraft.util.Identifier
 
+
 object ModComponents {
     val CHARGE_COMPONENT: ComponentType<Int> = Registry.register(
         Registries.DATA_COMPONENT_TYPE,
