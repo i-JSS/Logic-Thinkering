@@ -1,5 +1,6 @@
 package com.logicthinkering.digitalcircuits
 
+import com.logicthinkering.digitalcircuits.strategies.LogicStrategy
 import net.minecraft.block.AbstractRedstoneGateBlock
 import net.minecraft.block.Block
 import net.minecraft.block.BlockState
@@ -32,7 +33,7 @@ data class InputPower(
  * @param logicFunction a function that takes the input power from neighboring blocks and returns a boolean
  * indicating whether the gate should be powered
  */
-abstract class AbstractLogicGate(settings: Settings, val logicFunction: (InputPower) -> Boolean) :
+abstract class AbstractLogicGate(settings: Settings, val logicStrategy: LogicStrategy) :
     AbstractRedstoneGateBlock(settings) {
     init {
         defaultState = stateManager.defaultState
@@ -57,7 +58,7 @@ abstract class AbstractLogicGate(settings: Settings, val logicFunction: (InputPo
      * @param state The current block state.
      * @return Boolean indicating whether the gate is powered.
      */
-    override fun hasPower(world: World, pos: BlockPos, state: BlockState) = logicFunction(getInputPower(world, pos, state))
+    override fun hasPower(world: World, pos: BlockPos, state: BlockState) = logicStrategy.getOutput(getInputPower(world, pos, state))
 
 
     override fun appendProperties(builder: StateManager.Builder<Block, BlockState>) {
