@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "C": "logic_thinkering:reinforced_amethyst_shard",
+    "O": "minecraft:end_rod"
+  },
+  "pattern": [
+    "CC ",
+    " O ",
+    " O "
+  ],
+  "result": {
+    "count": 1,
+    "id": "logic_thinkering:reinforced_amethyst_hoe"
+  }
+}

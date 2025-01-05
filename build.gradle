@@ -1,6 +1,9 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
 	id 'fabric-loom' version '1.8-SNAPSHOT'
 	id 'maven-publish'
+	id "org.jetbrains.kotlin.jvm" version "2.0.21"
 }
 
 version = project.mod_version
@@ -22,12 +25,16 @@ loom {
 	splitEnvironmentSourceSets()
 
 	mods {
-		"modid" {
+		"logic_thinkering" {
 			sourceSet sourceSets.main
 			sourceSet sourceSets.client
 		}
 	}
 
+}
+
+fabricApi {
+	configureDataGeneration()
 }
 
 dependencies {
@@ -38,7 +45,7 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-	
+	modImplementation "net.fabricmc:fabric-language-kotlin:${project.fabric_kotlin_version}"
 }
 
 processResources {
@@ -51,6 +58,12 @@ processResources {
 
 tasks.withType(JavaCompile).configureEach {
 	it.options.release = 21
+}
+
+tasks.withType(KotlinCompile).configureEach {
+	kotlinOptions {
+		jvmTarget = 21
+	}
 }
 
 java {

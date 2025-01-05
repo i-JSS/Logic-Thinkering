@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "C": "logic_thinkering:reinforced_emerald_shard",
+    "O": "minecraft:blaze_rod"
+  },
+  "pattern": [
+    "CC ",
+    "CO ",
+    " O "
+  ],
+  "result": {
+    "count": 1,
+    "id": "logic_thinkering:reinforced_emerald_axe"
+  }
+}

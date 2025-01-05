@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "M": "minecraft:emerald",
+    "R": "minecraft:quartz_block",
+    "C": "minecraft:redstone"
+  },
+  "pattern": [
+    " M ",
+    "MCM",
+    " R "
+  ],
+  "result": {
+    "count": 1,
+    "id": "logic_thinkering:reinforced_emerald_shard"
+  }
+}

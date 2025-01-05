@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "M": "minecraft:iron_ingot",
+    "R": "minecraft:copper_ingot",
+    "C": "minecraft:redstone"
+  },
+  "pattern": [
+    "RRR",
+    "MMC",
+    "   "
+  ],
+  "result": {
+    "count": 1,
+    "id": "logic_thinkering:reinforced_copper_ingot"
+  }
+}

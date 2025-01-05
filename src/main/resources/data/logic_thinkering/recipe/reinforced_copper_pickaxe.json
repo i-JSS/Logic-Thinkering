@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "C": "logic_thinkering:reinforced_copper_ingot",
+    "O": "minecraft:breeze_rod"
+  },
+  "pattern": [
+    "CCC",
+    " O ",
+    " O "
+  ],
+  "result": {
+    "count": 1,
+    "id": "logic_thinkering:reinforced_copper_pickaxe"
+  }
+}

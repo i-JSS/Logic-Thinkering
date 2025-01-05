@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "M": "logic_thinkering:matriz_fios",
+    "C": "logic_thinkering:reinforced_copper_ingot",
+    "E": "logic_thinkering:reinforced_emerald_shard",
+    "A": "logic_thinkering:reinforced_amethyst_shard",
+    "D": "minecraft:diamond_pickaxe",
+    "O": "minecraft:obsidian"
+  },
+  "pattern": [
+    "MCM",
+    "EDA",
+    "OOO"
+  ],
+  "result": {
+    "count": 1,
+    "id": "logic_thinkering:bloco_mineracao"
+  }
+}

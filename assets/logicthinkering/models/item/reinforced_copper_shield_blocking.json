@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/shield_blocking",
+  "textures": {
+    "particle": "logic-thinkering:item/reinforced_copper_shield_base",
+    "base": "logic-thinkering:item/reinforced_copper_shield_base"
+  }
+}

@@ -1,41 +1,52 @@
 {
-	"schemaVersion": 1,
-	"id": "logicthinkering",
-	"version": "${version}",
-	"name": "Example mod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
-	"authors": [
-		"Me!"
-	],
-	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
-	},
-	"license": "CC0-1.0",
-	"icon": "assets/logicthinkering/icon.png",
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-			"com.example.ExampleMod"
-		],
-		"client": [
-			"com.example.ExampleModClient"
-		]
-	},
-	"mixins": [
-		"modid.mixins.json",
-		{
-			"config": "modid.client.mixins.json",
-			"environment": "client"
-		}
-	],
-	"depends": {
-		"fabricloader": ">=0.16.7",
-		"minecraft": "~1.21.3",
-		"java": ">=21",
-		"fabric-api": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
-	}
+  "schemaVersion": 1,
+  "id": "logic_thinkering",
+  "version": "${version}",
+  "name": "Logic Thinkering",
+  "description": "This is an example description! Tell everyone what your mod is about!",
+  "authors": [
+    "Me!"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+  "license": "CC0-1.0",
+  "icon": "assets/logic_thinkering/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      {
+        "value": "com.logic_thinkering.Main"
+      }
+    ],
+    "client": [
+      {
+        "value": "com.logic_thinkering.LogicThinkeringClient"
+      }
+    ],
+    "fabric-datagen": [
+      {
+        "value": "com.logic_thinkering.LogicThinkeringDataGenerator",
+        "adapter": "kotlin"
+      }
+    ]
+  },
+  "mixins": [
+    "logic_thinkering.mixins.json",
+    {
+      "config": "logic_thinkering.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.7",
+    "minecraft": "~1.21.3",
+    "java": ">=21",
+    "fabric-api": "*",
+    "fabric-language-kotlin": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
 }

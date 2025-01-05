@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "M": "minecraft:amethyst_shard",
+    "R": "minecraft:netherite_ingot",
+    "C": "minecraft:echo_shard"
+  },
+  "pattern": [
+    " M ",
+    "MRM",
+    " C "
+  ],
+  "result": {
+    "count": 1,
+    "id": "logic_thinkering:reinforced_amethyst_shard"
+  }
+}
