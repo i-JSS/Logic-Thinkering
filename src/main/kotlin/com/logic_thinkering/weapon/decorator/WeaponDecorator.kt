@@ -12,7 +12,7 @@ abstract class WeaponDecorator(private val weapon: WeaponBehavior) : WeaponBehav
         return weapon.onHit(stack, target, attacker)
     }
 
-    override fun appendTooltip(stack: ItemStack, world: Item.TooltipContext?, tooltip: MutableList<Text>, context: TooltipType) {
-        weapon.appendTooltip(stack, world, tooltip, context)
+    override fun appendWeaponTooltip(stack: ItemStack, world: Item.TooltipContext?, tooltip: MutableList<Text>, context: TooltipType) {
+        weapon.appendWeaponTooltip(stack, world, tooltip, context)
     }
 }

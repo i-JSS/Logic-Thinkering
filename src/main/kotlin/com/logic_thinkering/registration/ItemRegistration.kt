@@ -1,12 +1,8 @@
-package com.logic_thinkering
+package com.logic_thinkering.registration
 
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
 import net.minecraft.item.Item
 import net.minecraft.item.ItemGroup
-import net.minecraft.registry.Registries
-import net.minecraft.registry.Registry
 import net.minecraft.registry.RegistryKey
-import net.minecraft.util.Identifier
 import kotlin.collections.plusAssign
 
 
@@ -15,10 +11,10 @@ import kotlin.collections.plusAssign
  *
  * @param init A lambda function used to initialize the `ItemRegistryBuilder` and register items.
  */
-fun registerItems(init: ItemRegistryBuilder.() -> Unit) {
+fun registerItems(init: ItemRegistryBuilder.() -> Unit) : ItemRegistryHelper {
     val builder = ItemRegistryBuilder()
     builder.init()
-    builder.register()
+    return builder.build()
 }
 
 @DslMarker
@@ -31,7 +27,6 @@ annotation class ItemRegistryDsl
 class ItemRegistryBuilder {
     private val items = mutableListOf<Pair<Item, String>>()
     private var itemGroup: RegistryKey<ItemGroup>? = null
-
 
     /**
      * Sets the item group that the items will be added to.
@@ -50,26 +45,9 @@ class ItemRegistryBuilder {
         items += this to name
     }
 
-    /**
-     * Registers an item with a name. This function is used to build and register an item.
-     *
-     * Created for compatability with java
-     *
-     * @param name The name for the block being registered.
-     * @return this instance of BlockRegistryBuilder
-     */
-    fun with(item: Item, name: String) = apply { items += item to name }
-
-    fun register() {
-        val group = checkNotNull(itemGroup) { "Item group must be set before registration" }
+    fun build() : ItemRegistryHelper {
         if (itemGroup == null)
-            throw IllegalStateException("Item group must be set before block item registration")
-        items.forEach { (item, name) ->
-            Registry.register(Registries.ITEM, Identifier.of(MOD_ID, name), item)
-        }
-        ItemGroupEvents.modifyEntriesEvent(group).register {
-            items.forEach { (item, _) ->  it.add(item) }
-        }
+            throw IllegalStateException("Item group must be set before registration")
+        return ItemRegistryHelper(items, itemGroup!!)
     }
-
 }

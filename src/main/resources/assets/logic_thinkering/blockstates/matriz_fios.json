@@ -1,5 +1,5 @@
 {
   "variants": {
-    "": { "model": "logic-thinkering:block/matriz_fios" }
+    "": { "model": "logic_thinkering:block/matriz_fios" }
   }
 }

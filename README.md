@@ -140,6 +140,18 @@ Figura 11 - Bloco de Mineração
 
 </center>
 
+<img src="https://raw.githubusercontent.com/UnBArqDsw2024-2/2024.2_G1_Logic_Thinkering_Entrega_03/main/assets/comand.png?raw=true"/>
+
+Figura 12 - Comando para Acessar o Guia
+
+</center>
+
+<img src="https://raw.githubusercontent.com/UnBArqDsw2024-2/2024.2_G1_Logic_Thinkering_Entrega_03/main/assets/page1.png?raw=true"/>
+
+Figura 13 - Livro Guia de Eletrônica
+
+</center>
+
 ## Setup
 
 For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.

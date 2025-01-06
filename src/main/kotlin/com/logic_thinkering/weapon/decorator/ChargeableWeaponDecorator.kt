@@ -69,8 +69,8 @@ class ChargeableWeaponDecorator(
         )
     }
 
-    override fun appendTooltip(stack: ItemStack, world: TooltipContext?, tooltip: MutableList<Text>, context: TooltipType) {
-        super.appendTooltip(stack, world, tooltip, context)
+    override fun appendWeaponTooltip(stack: ItemStack, world: TooltipContext?, tooltip: MutableList<Text>, context: TooltipType) {
+        super.appendWeaponTooltip(stack, world, tooltip, context)
         addChargeTooltip(stack, tooltip)
     }
 

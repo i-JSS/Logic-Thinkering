@@ -8,5 +8,5 @@ import net.minecraft.text.Text
 
 interface WeaponBehavior {
     fun onHit(stack: ItemStack, target: LivingEntity, attacker: LivingEntity): Boolean
-    fun appendTooltip(stack: ItemStack, world: TooltipContext?, tooltip: MutableList<Text>, context: TooltipType)
+    fun appendWeaponTooltip(stack: ItemStack, world: TooltipContext?, tooltip: MutableList<Text>, context: TooltipType)
 }
