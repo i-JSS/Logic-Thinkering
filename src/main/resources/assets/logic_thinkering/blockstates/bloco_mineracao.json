@@ -1,5 +1,5 @@
 {
   "variants": {
-    "": { "model": "logic-thinkering:block/bloco_mineracao" }
+    "": { "model": "logic_thinkering:block/bloco_mineracao" }
   }
 }

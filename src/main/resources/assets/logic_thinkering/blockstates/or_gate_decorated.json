@@ -1,0 +1,5 @@
+{
+  "variants" : {
+    "": {"model": "logic_thinkering:block/or_gate_decorated"}
+  }
+}

@@ -1,4 +1,4 @@
-package com.logic_thinkering.block;
+package com.logic_thinkering.block.clock;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -14,7 +14,7 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
-public class ClockEnergy extends Block {
+public abstract class ClockEnergy extends Block {
     public static final BooleanProperty ACTIVE = BooleanProperty.of("active");
 
     public ClockEnergy(AbstractBlock.Settings settings) {
@@ -22,6 +22,8 @@ public class ClockEnergy extends Block {
         // Define o estado inicial do bloco como "inativo"
         this.setDefaultState(this.stateManager.getDefaultState().with(ACTIVE, false));
     }
+
+    protected abstract PulseGenerator createPulseGenerator();
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
@@ -44,8 +46,11 @@ public class ClockEnergy extends Block {
         boolean isActive = state.get(ACTIVE);
         world.setBlockState(pos, state.with(ACTIVE, !isActive), Block.NOTIFY_ALL);
 
+        PulseGenerator pulseGenerator = createPulseGenerator();
+        int nextInterval = pulseGenerator.generatePulse();
+
         // Solicita uma nova atualização (20 ticks = 1 segundo)
-        world.scheduleBlockTick(pos, this, 100);
+        world.scheduleBlockTick(pos, this, nextInterval);
     }
 
     @Override

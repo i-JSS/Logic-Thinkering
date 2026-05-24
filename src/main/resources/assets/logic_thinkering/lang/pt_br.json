@@ -31,5 +31,12 @@
   "item.logic_thinkering.reinforced_emerald_helmet": "Capacete de Esmeralda Reforçada",
   "item.logic_thinkering.reinforced_emerald_chestplate": "Peitoral de Esmeralda Reforçada",
   "item.logic_thinkering.reinforced_emerald_leggings": "Calças de Esmeralda Reforçada",
-  "item.logic_thinkering.reinforced_emerald_boots": "Botas de Esmeralda Reforçada"
+  "item.logic_thinkering.reinforced_emerald_boots": "Botas de Esmeralda Reforçada",
+  "item.logic_thinkering.or_gate_decorated": "Porta Ou",
+  "item.logic_thinkering.and_gate_decorated": "Porta E",
+  "item.logic_thinkering.not_gate_decorated": "Porta Não",
+  "item.logic_thinkering.xor_gate_decorated": "Porta Ou-Exclusivo",
+  "item.logic_thinkering.nor_gate_decorated": "Porta Não-Ou",
+  "item.logic_thinkering.nand_gate_decorated": "Porta Não-E",
+  "item.logic_thinkering.xnor_gate_decorated": "Porta Não-Ou-Exclusivo"
 }
